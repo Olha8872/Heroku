@@ -33,8 +33,13 @@ build/
 !**/src/main/**/build/
 !**/src/test/**/build/
 
-### VS Code ###
+
+# Игнорируем временные файлы
+target/
+.idea/
 .vscode/
+.DS_Store
+
 
 ### Mac OS ###
 .DS_Store
