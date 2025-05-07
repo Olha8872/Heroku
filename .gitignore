@@ -34,7 +34,6 @@ build/
 !**/src/test/**/build/
 
 
-# Игнорируем временные файлы
 target/
 .idea/
 .vscode/
