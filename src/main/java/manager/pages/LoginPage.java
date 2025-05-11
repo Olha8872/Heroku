@@ -1,9 +1,10 @@
-package demoqa.pages;
+package manager.pages;
 
-import demoqa.core.BasePage;
+import manager.core.BasePage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class LoginPage extends BasePage {
@@ -21,14 +22,17 @@ public class LoginPage extends BasePage {
     @FindBy(name = "commit")
     WebElement loginButton;
 
-    public LoginPage enterLoginCredentials(String emailAddr, String password) {
-        type(userEmail, emailAddr);
-        type(userPassword, password);
+    public LoginPage enterLoginCredentials(String email, String password) {
+        driver.get("https://id.heroku.com/login");
+
+        wait.until(ExpectedConditions.visibilityOf(userEmail)).sendKeys(email);
+        wait.until(ExpectedConditions.visibilityOf(userPassword)).sendKeys(password);
+
         return this;
     }
 
     public ProfilePage clickLoginButton() {
-        click(loginButton);
+        wait.until(ExpectedConditions.elementToBeClickable(loginButton)).click();
         return new ProfilePage(driver, wait);
     }
 }

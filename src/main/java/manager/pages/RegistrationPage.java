@@ -1,16 +1,18 @@
-package demoqa.pages;
+package manager.pages;
 
-import demoqa.core.BasePage;
+import manager.core.BasePage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.time.Duration;
+
 public class RegistrationPage extends BasePage {
 
-    public RegistrationPage(WebDriver driver, WebDriverWait wait) {
-        super(driver, wait);
+    public RegistrationPage(WebDriver driver) {
+        super(driver, new WebDriverWait(driver, Duration.ofSeconds(10)));
     }
 
     @FindBy(id = "first_name")
@@ -37,7 +39,6 @@ public class RegistrationPage extends BasePage {
         type(email, emailAddr);
         type(company, companyName);
 
-        // Выбор страны из выпадающего списка
         Select select = new Select(country);
         select.selectByVisibleText(countryName);
 
