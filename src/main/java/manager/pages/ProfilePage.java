@@ -23,4 +23,7 @@ public class ProfilePage extends BasePage {
                 "Expected: " + expectedText + ", but was: " + actualText);
         return this;
     }
+
+    private void waitUntilVisible(WebElement userNameValue) {
+    }
 }

@@ -7,8 +7,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 public class AlertsTests extends TestBase {
-
-    AlertsPage alertsPage;
+    private AlertsPage alertsPage;
 
     @BeforeMethod
     public void setUpTest() {
@@ -19,19 +18,19 @@ public class AlertsTests extends TestBase {
     @Test
     public void jsAlertTest() {
         alertsPage.clickAlertAndAccept();
-        Assert.assertEquals(alertsPage.getResultText(), "You successfully clicked an alert");
+        Assert.assertEquals(alertsPage.getResultText(), "You successfully clicked an alert", "Alert message mismatch.");
     }
 
     @Test
     public void jsConfirmOkTest() {
         alertsPage.clickConfirm(true);
-        Assert.assertEquals(alertsPage.getResultText(), "You clicked: Ok");
+        Assert.assertEquals(alertsPage.getResultText(), "You clicked: Ok", "Confirmation message mismatch.");
     }
 
     @Test
     public void jsPromptTest() {
         String input = "TestUser";
         alertsPage.clickPrompt(input);
-        Assert.assertEquals(alertsPage.getResultText(), "You entered: " + input);
+        Assert.assertEquals(alertsPage.getResultText(), "You entered: " + input, "Prompt message mismatch.");
     }
 }

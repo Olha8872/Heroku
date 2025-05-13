@@ -7,12 +7,10 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.time.Duration;
-
 public class RegistrationPage extends BasePage {
 
-    public RegistrationPage(WebDriver driver) {
-        super(driver, new WebDriverWait(driver, Duration.ofSeconds(10)));
+    public RegistrationPage(WebDriver driver, WebDriverWait wait) {
+        super(driver, wait);
     }
 
     @FindBy(id = "first_name")
@@ -43,6 +41,15 @@ public class RegistrationPage extends BasePage {
         select.selectByVisibleText(countryName);
 
         return this;
+    }
+
+    private void type(WebElement element, String text) {
+        waitUntilVisible(element);
+        element.clear();
+        element.sendKeys(text);
+    }
+
+    private void waitUntilVisible(WebElement element) {
     }
 
     public void submitRegistration() {

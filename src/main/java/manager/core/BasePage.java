@@ -1,16 +1,15 @@
 package manager.core;
 
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import java.time.Duration;
 
 public class BasePage {
     protected WebDriver driver;
     protected WebDriverWait wait;
-    protected JavascriptExecutor js;
+    public static JavascriptExecutor js;
 
     public BasePage(WebDriver driver, WebDriverWait wait) {
         this.driver = driver;
@@ -20,23 +19,31 @@ public class BasePage {
     }
 
     public void click(WebElement element) {
-        waitUntilClickable(element);
-        element.click();
-    }
-
-    public void type(WebElement element, String text) {
-        if (text != null && !text.isEmpty()) {
-            waitUntilVisible(element);
-            element.clear();
-            element.sendKeys(text);
+        scrollToElement(element);
+        try {
+            element.click();
+        } catch (ElementClickInterceptedException e) {
+            js.executeScript("arguments[0].click();", element);
         }
     }
 
-    public void waitUntilClickable(WebElement element) {
-        wait.until(ExpectedConditions.elementToBeClickable(element));
+    public void scrollToElement(WebElement element) {
+        js.executeScript("arguments[0].scrollIntoView(true);", element);
     }
 
-    public void waitUntilVisible(WebElement element) {
-        wait.until(ExpectedConditions.visibilityOf(element));
+    public boolean shouldHaveText(WebElement element, String text, int seconds) {
+        return new WebDriverWait(driver, Duration.ofSeconds(seconds))
+                .until(ExpectedConditions.textToBePresentInElement(element, text));
     }
+
+    public void hideAds() {
+        js.executeScript("document.getElementById('adplus-anchor')?.style.setProperty('display','none');");
+        js.executeScript("document.querySelector('footer')?.style.setProperty('display','none');");
+    }
+
+    private void waitUntilVisible(WebElement element) {
+        new WebDriverWait(driver, Duration.ofSeconds(10))
+                .until(ExpectedConditions.visibilityOf(element));
+    }
+
 }

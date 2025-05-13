@@ -8,7 +8,7 @@ public class RegistrationTests extends TestBase {
 
     @Test
     public void registrationTest() {
-        new RegistrationPage(app.getDriver())
+        new RegistrationPage(app.getDriver(), app.getWait())
                 .fillRegistrationForm("Olga", "Situk", "situk1981@gmail.com", "situk1981", "Germany")
                 .submitRegistration();
     }
