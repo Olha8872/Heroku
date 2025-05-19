@@ -14,6 +14,7 @@ import java.time.Duration;
 public class TestBase {
     protected ApplicationManager app = new ApplicationManager();
 
+
     @BeforeMethod
     public void setUp() {
         app.init();

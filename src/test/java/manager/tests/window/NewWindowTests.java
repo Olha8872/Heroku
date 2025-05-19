@@ -9,7 +9,6 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 public class NewWindowTests extends TestBase {
-
     HomePage homePage;
 
     @BeforeMethod

@@ -24,6 +24,7 @@ public class ProfilePage extends BasePage {
         return this;
     }
 
+
     private void waitUntilVisible(WebElement userNameValue) {
     }
 }

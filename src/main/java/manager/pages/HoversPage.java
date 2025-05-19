@@ -16,6 +16,7 @@ public class HoversPage extends BasePage {
         PageFactory.initElements(driver, this);
     }
 
+
     @FindBy(className = "figure")
     List<WebElement> figures;
 

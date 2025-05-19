@@ -26,4 +26,5 @@ public class DropDownPage extends BasePage {
         Select select = new Select(dropdown);
         return select.getFirstSelectedOption().getText();
     }
+
 }

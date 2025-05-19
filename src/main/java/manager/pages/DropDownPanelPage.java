@@ -12,6 +12,7 @@ public class DropDownPanelPage extends BasePage {
         super(driver, wait);
     }
 
+
     @FindBy(css = "ul[id='glostick__menu--navigator'] li:nth-child(1)")
     WebElement dashboard;
 

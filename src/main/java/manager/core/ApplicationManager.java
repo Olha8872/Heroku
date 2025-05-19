@@ -26,6 +26,7 @@ public class ApplicationManager {
         return wait;
     }
 
+
     public void stop() {
         if (driver != null) {
             driver.quit();

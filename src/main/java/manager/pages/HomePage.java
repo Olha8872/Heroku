@@ -12,6 +12,7 @@ public class HomePage extends BasePage {
         super(driver, wait);
     }
 
+
     @FindBy(xpath = "//a[@href='/windows/new']")
     WebElement clickHereLink;
 

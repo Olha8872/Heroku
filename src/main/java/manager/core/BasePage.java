@@ -41,6 +41,7 @@ public class BasePage {
         js.executeScript("document.querySelector('footer')?.style.setProperty('display','none');");
     }
 
+
     private void waitUntilVisible(WebElement element) {
         new WebDriverWait(driver, Duration.ofSeconds(10))
                 .until(ExpectedConditions.visibilityOf(element));

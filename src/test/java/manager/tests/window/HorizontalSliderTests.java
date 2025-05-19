@@ -7,6 +7,7 @@ import org.testng.annotations.Test;
 import static org.testng.Assert.assertEquals;
 
 public class HorizontalSliderTests extends TestBase {
+
     @Test
     public void testSliderMovesTo3() {
         app.getDriver().get("https://the-internet.herokuapp.com/horizontal_slider");

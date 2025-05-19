@@ -7,6 +7,7 @@ import org.testng.annotations.Test;
 import static org.testng.Assert.assertEquals;
 
 public class ContextMenuTests extends TestBase {
+
     @Test
     public void testRightClickAlertText() {
         app.getDriver().get("https://the-internet.herokuapp.com/context_menu");

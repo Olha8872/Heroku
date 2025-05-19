@@ -16,6 +16,7 @@ public class ContextMenuPage extends BasePage {
         PageFactory.initElements(driver, this);
     }
 
+
     @FindBy(id = "hot-spot")
     WebElement hotSpotBox;
 

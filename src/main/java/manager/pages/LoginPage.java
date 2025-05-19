@@ -13,6 +13,7 @@ public class LoginPage extends BasePage {
         super(driver, wait);
     }
 
+
     @FindBy(id = "email")
     WebElement userEmail;
 

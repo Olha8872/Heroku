@@ -12,6 +12,7 @@ public class IFrameTest extends TestBase {
         app.getDriver().get("https://the-internet.herokuapp.com/nested_frames");
     }
 
+
     @Test
     public void testLeftFrame() {
         new FramePage(app.getDriver(), app.getWait())

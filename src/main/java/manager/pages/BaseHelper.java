@@ -15,7 +15,6 @@ public class BaseHelper {
         driver.get(url);  // Open URL
     }
 
-
     public String getPageTitle() {
         return driver.getTitle();  // Header
     }

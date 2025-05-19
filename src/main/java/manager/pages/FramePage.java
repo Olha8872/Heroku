@@ -18,6 +18,7 @@ public class FramePage extends BasePage {
         return this;
     }
 
+
     public FramePage switchToBottomFrame() {
         driver.switchTo().defaultContent();
         driver.switchTo().frame("frame-bottom");

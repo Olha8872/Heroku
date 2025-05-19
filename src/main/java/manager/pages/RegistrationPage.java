@@ -13,6 +13,7 @@ public class RegistrationPage extends BasePage {
         super(driver, wait);
     }
 
+
     @FindBy(id = "first_name")
     WebElement firstName;
 

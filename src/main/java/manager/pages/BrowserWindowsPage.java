@@ -25,6 +25,7 @@ public class BrowserWindowsPage extends BasePage {
         return this;
     }
 
+
     public BrowserWindowsPage switchToNewWindow(int index) {
         List<String> windowHandles = new ArrayList<>(driver.getWindowHandles());
         Assert.assertTrue(windowHandles.size() > index, "New window is not opened!");

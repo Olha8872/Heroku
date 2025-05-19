@@ -14,6 +14,7 @@ public class HorizontalSliderPage extends BasePage {
         PageFactory.initElements(driver, this);
     }
 
+
     @FindBy(css = "input[type='range']")
     WebElement slider;
 

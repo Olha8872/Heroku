@@ -21,7 +21,6 @@ public class LoginTests extends TestBase {
 
         WebElement loginLink = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[text()='Log in']")));
 
-
         loginLink.click();
 
 

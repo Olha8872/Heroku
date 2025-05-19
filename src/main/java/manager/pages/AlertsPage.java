@@ -13,6 +13,7 @@ public class AlertsPage extends BasePage {
         super(driver, wait);
     }
 
+
     @FindBy(xpath = "//button[text()='Click for JS Alert']")
     WebElement jsAlertBtn;
 

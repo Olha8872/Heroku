@@ -7,6 +7,7 @@ import org.testng.annotations.Test;
 import static org.testng.Assert.assertEquals;
 
 public class DropDownTests extends TestBase {
+
     @Test
     public void testDropdownOptionSelection() {
         app.getDriver().get("https://the-internet.herokuapp.com/dropdown");

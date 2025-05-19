@@ -21,6 +21,7 @@ public class AlertsTests extends TestBase {
         Assert.assertEquals(alertsPage.getResultText(), "You successfully clicked an alert", "Alert message mismatch.");
     }
 
+
     @Test
     public void jsConfirmOkTest() {
         alertsPage.clickConfirm(true);
